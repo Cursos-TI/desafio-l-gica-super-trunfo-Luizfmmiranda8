@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
@@ -81,102 +83,124 @@ int main()
     printf("Densidade populacional da cidade 2: %.2f\n", densidadePopulacional2);
     printf("PIB per capita da cidade 2: %.2f\n", pibPerCapita2);
 
+    //Menu para escolha da comparação
+    int opcao;
+    printf("Escolha uma opção para comparar as cartas: \n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Quantidade de pontos turísticos\n");
+    printf("5. Densidade Populacional");
+    printf("6. PIB per capita\n");
+    scanf("%d", &opcao);
+
     //Comparação das cartas e exibição da carta vencedora
-    if(populacao > populacao2)
+    switch(opcao)
     {
-        //Carta 1 venceu
-        printf("A carta 1 venceu a propriedade população com: %f\n", populacao);
+        case 1:
+            if(populacao > populacao2)
+            {
+                //Carta 1 venceu
+                printf("A carta 1 venceu a propriedade população com: %f\n", populacao);
+            }
+            else if (populacao2 > populacao)
+            {
+                //Carta 2 venceu
+                printf("A carta 2 venceu a propriedade população com: %f\n", populacao2);
+            }
+            else
+            {
+                //Empate
+                printf("A propriedade população foi empate entre as duas cartas\n");
+            }
+        break;
+        case 2:
+            if(area > area2)
+            {
+                //Carta 1 venceu
+                printf("A carta 1 venceu a propriedade área com: %f\n", area);
+            }
+            else if (area2 > area)
+            {
+                //Carta 2 venceu
+                printf("A carta 2 venceu a propriedade área com: %f\n", area2);
+            }
+            else
+            {
+                //Empate
+                printf("A propriedade área foi empate entre as duas cartas\n");
+            }
+        break;
+        case 3:
+            if(pib > pib2)
+            {
+                //Carta 1 venceu
+                printf("A carta 1 venceu a propriedade PIB com: %f\n", pib);
+            }
+            else if (pib2 > pib)
+            {
+                //Carta 2 venceu
+                printf("A carta 2 venceu a propriedade PIB com: %f\n", pib2);
+            }
+            else
+            {
+                //Empate
+                printf("A propriedade PIB foi empate entre as duas cartas\n");
+            }
+        break;
+        case 4:
+            if(quantidadePontosTuristicos > quantidadePontosTuristicos2)
+            {
+                //Carta 1 venceu
+                printf("A carta 1 venceu a propriedade quantidade de pontos turísticos com: %d\n", quantidadePontosTuristicos);
+            }
+            else if (quantidadePontosTuristicos2 > quantidadePontosTuristicos)
+            {
+                //Carta 2 venceu
+                printf("A carta 2 venceu a propriedade quantidade de pontos turísticos com: %d\n", quantidadePontosTuristicos2);
+            }
+            else
+            {
+                //Empate
+                printf("A propriedade quatidade de pontos turísticos foi empate entre as duas cartas\n");
+            }
+        break;
+        case 5:
+            if(densidadePopulacional < densidadePopulacional2)
+            {
+                //Carta 1 venceu
+                printf("A carta 1 venceu a propriedade densidade populacional com: %.2f\n", densidadePopulacional);
+            }
+            else if (densidadePopulacional2 < densidadePopulacional)
+            {
+                //Carta 2 venceu
+                printf("A carta 2 venceu a propriedade densidade populacional com: %.2f\n", densidadePopulacional2);
+            }
+            else
+            {
+                //Empate
+                printf("A propriedade densidade populacional foi empate entre as duas cartas\n");
+            }
+        break;
+        case 6:
+            if(pibPerCapita > pibPerCapita2)
+            {
+                //Carta 1 venceu
+                printf("A carta 1 venceu a propriedade PIB per capita com: %.2f\n", pibPerCapita);
+            }
+            else if (pibPerCapita2 > pibPerCapita)
+            {
+                //Carta 2 venceu
+                printf("A carta 2 venceu a propriedade PIB per capita com: %.2f\n", pibPerCapita2);
+            }
+            else
+            {
+                //Empate
+                printf("A propriedade PIB per capita foi empate entre as duas cartas\n");
+            }
+        break;
+        default:
+        printf("Opção inválida!");
     }
-    else if (populacao2 > populacao)
-    {
-        //Carta 2 venceu
-        printf("A carta 2 venceu a propriedade população com: %f\n", populacao2);
-    }
-    else
-    {
-        //Empate
-        printf("A propriedade população foi empate entre as duas cartas\n");
-    }
-
-    if(area > area2)
-    {
-        //Carta 1 venceu
-        printf("A carta 1 venceu a propriedade área com: %f\n", area);
-    }
-    else if (area2 > area)
-    {
-        //Carta 2 venceu
-        printf("A carta 2 venceu a propriedade área com: %f\n", area2);
-    }
-    else
-    {
-        //Empate
-        printf("A propriedade área foi empate entre as duas cartas\n");
-    }
-
-    if(pib > pib2)
-    {
-        //Carta 1 venceu
-        printf("A carta 1 venceu a propriedade PIB com: %f\n", pib);
-    }
-    else if (pib2 > pib)
-    {
-        //Carta 2 venceu
-        printf("A carta 2 venceu a propriedade PIB com: %f\n", pib2);
-    }
-    else
-    {
-        //Empate
-        printf("A propriedade PIB foi empate entre as duas cartas\n");
-    }
-
-    if(quantidadePontosTuristicos > quantidadePontosTuristicos2)
-    {
-        //Carta 1 venceu
-        printf("A carta 1 venceu a propriedade quantidade de pontos turísticos com: %d\n", quantidadePontosTuristicos);
-    }
-    else if (quantidadePontosTuristicos2 > quantidadePontosTuristicos)
-    {
-        //Carta 2 venceu
-        printf("A carta 2 venceu a propriedade quantidade de pontos turísticos com: %d\n", quantidadePontosTuristicos2);
-    }
-    else
-    {
-        //Empate
-        printf("A propriedade quatidade de pontos turísticos foi empate entre as duas cartas\n");
-    }
-
-    if(densidadePopulacional < densidadePopulacional2)
-    {
-        //Carta 1 venceu
-        printf("A carta 1 venceu a propriedade densidade populacional com: %.2f\n", densidadePopulacional);
-    }
-    else if (densidadePopulacional2 < densidadePopulacional)
-    {
-        //Carta 2 venceu
-        printf("A carta 2 venceu a propriedade densidade populacional com: %.2f\n", densidadePopulacional2);
-    }
-    else
-    {
-        //Empate
-        printf("A propriedade densidade populacional foi empate entre as duas cartas\n");
-    }
-
-    if(pibPerCapita > pibPerCapita2)
-    {
-        //Carta 1 venceu
-        printf("A carta 1 venceu a propriedade PIB per capita com: %.2f\n", pibPerCapita);
-    }
-    else if (pibPerCapita2 > pibPerCapita)
-    {
-        //Carta 2 venceu
-        printf("A carta 2 venceu a propriedade PIB per capita com: %.2f\n", pibPerCapita2);
-    }
-    else
-    {
-        //Empate
-        printf("A propriedade PIB per capita foi empate entre as duas cartas\n");
-    }
-    
     return 0;
 }
